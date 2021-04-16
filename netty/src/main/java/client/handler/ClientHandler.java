@@ -1,6 +1,7 @@
 package client.handler;
 
 import io.netty.buffer.ByteBuf;
+import io.netty.buffer.Unpooled;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.SimpleChannelInboundHandler;
 
@@ -10,7 +11,7 @@ public class ClientHandler extends SimpleChannelInboundHandler<ByteBuf> {
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
         //客户端连接服务端之后调用
         System.out.println("ClientHandler channelActive");
-        ctx.write("ClientHandler channelActive");
+        ctx.write(Unpooled.buffer().writeBytes("ClientHandler channelActive".getBytes()));
         ctx.flush();
     }
 
