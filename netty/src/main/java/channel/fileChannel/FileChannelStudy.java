@@ -1,4 +1,4 @@
-package channel.FileChannel;
+package channel.fileChannel;
 
 import java.io.*;
 import java.nio.ByteBuffer;
